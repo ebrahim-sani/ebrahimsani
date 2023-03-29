@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap } from "../../wrapper";
-import Tilt from "react-tilt";
 import { client, urlFor } from "../../client";
 
 import "./Header.scss";
@@ -48,18 +47,13 @@ const Header = () => {
                {/* <LaptopCanvas /> */}
 
                <div className="app__header-right">
-                  <Tilt>
-                     <motion.div
-                        whileInView={{ scale: [0, 1] }}
-                        transition={{ duration: 1, ease: "easeInOut" }}
-                        className="overlay_circle"
-                     >
-                        <img
-                           src={urlFor(hero.profileImg)}
-                           alt="profile_circle"
-                        />
-                     </motion.div>
-                  </Tilt>
+                  <motion.div
+                     whileInView={{ scale: [0, 1] }}
+                     transition={{ duration: 1, ease: "easeInOut" }}
+                     className="overlay_circle"
+                  >
+                     <img src={urlFor(hero.profileImg)} alt="profile_circle" />
+                  </motion.div>
                </div>
             </div>
          ))}
